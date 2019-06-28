@@ -7,18 +7,23 @@
   
   
   
-  <title>Archives | 【温&amp;柔的后花园】</title>
+  <title>python生成器详解 | 【温&amp;柔的后花园】</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="心之所向 素履以往 生如逆旅 一苇以航">
-<meta property="og:type" content="website">
-<meta property="og:title" content="【温&amp;柔的后花园】">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="生成器 在 Python 中，使用了 yield 的函数被称为生成器（generator） 跟普通函数不同的是，生成器是一个返回迭代器的函数，只能用于迭代操作，更简单点理解生成器就是一个迭代器。 在调用生成器运行的过程中，每次遇到 yield 时函数会暂停并保存当前所有的运行信息，返回 yield 的值, 并在下一次执行 next() 方法时从当前位置继续运行 调用一个生成器函数，返回的是一个迭代">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python生成器详解">
+<meta property="og:url" content="http://yoursite.com/2019/06/28/python生成器详解/index.html">
 <meta property="og:site_name" content="【温&amp;柔的后花园】">
-<meta property="og:description" content="心之所向 素履以往 生如逆旅 一苇以航">
+<meta property="og:description" content="生成器 在 Python 中，使用了 yield 的函数被称为生成器（generator） 跟普通函数不同的是，生成器是一个返回迭代器的函数，只能用于迭代操作，更简单点理解生成器就是一个迭代器。 在调用生成器运行的过程中，每次遇到 yield 时函数会暂停并保存当前所有的运行信息，返回 yield 的值, 并在下一次执行 next() 方法时从当前位置继续运行 调用一个生成器函数，返回的是一个迭代">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://i.loli.net/2019/06/28/5d158387bd67b75029.png">
+<meta property="og:image" content="https://i.loli.net/2019/06/28/5d158386e43a733015.png">
+<meta property="og:updated_time" content="2019-06-28T03:03:34.910Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【温&amp;柔的后花园】">
-<meta name="twitter:description" content="心之所向 素履以往 生如逆旅 一苇以航">
+<meta name="twitter:title" content="python生成器详解">
+<meta name="twitter:description" content="生成器 在 Python 中，使用了 yield 的函数被称为生成器（generator） 跟普通函数不同的是，生成器是一个返回迭代器的函数，只能用于迭代操作，更简单点理解生成器就是一个迭代器。 在调用生成器运行的过程中，每次遇到 yield 时函数会暂停并保存当前所有的运行信息，返回 yield 的值, 并在下一次执行 next() 方法时从当前位置继续运行 调用一个生成器函数，返回的是一个迭代">
+<meta name="twitter:image" content="https://i.loli.net/2019/06/28/5d158387bd67b75029.png">
   
     <link rel="alternative" href="/atom.xml" title="【温&amp;柔的后花园】" type="application/atom+xml">
   
@@ -43,8 +48,8 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
-          isArchive: true,
+          isPost: true,
+          isArchive: false,
           isTag: false,
           isCategory: false,
           open_in_new: false
@@ -271,196 +276,234 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-python生成器详解" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a  href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/2019/06/28/python生成器详解/" class="archive-article-date">
-      <time datetime="2019-06-28T02:28:54.000Z" itemprop="datePublished">06-28</time>
+    <div class="article-meta">
+      <a  href="/2019/06/28/python生成器详解/" class="article-date">
+      <time datetime="2019-06-28T02:28:54.000Z" itemprop="datePublished">2019-06-28</time>
 </a>
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/2019/06/28/python生成器详解/">python生成器详解</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python生成器详解
     </h1>
   
 
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
-          
+        
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h3><ul>
+<li>在 Python 中，使用了 yield 的函数被称为生成器（generator）</li>
+<li>跟普通函数不同的是，生成器是一个返回迭代器的函数，只能用于迭代操作，更简单点理解生成器就是一个迭代器。</li>
+<li>在调用生成器运行的过程中，每次遇到 yield 时函数会暂停并保存当前所有的运行信息，返回 yield 的值, 并在下一次执行 next() 方法时从当前位置继续运行</li>
+<li>调用一个生成器函数，返回的是一个迭代器对象</li>
+<li>yield关键字的另外一种使用形式：表达式形式的yield  </li>
+</ul>
+<h3 id="协程函数"><a href="#协程函数" class="headerlink" title="协程函数"></a>协程函数</h3><ul>
+<li>协程函数就是使用了yield表达式形式的生成器</li>
+<li>这里主要介绍协程函数的执行过程，简单的生成器不再做赘述。</li>
+<li>yield关键字的作用<ul>
+<li>相当于return 返回函数执行的结果</li>
+<li>yield表达式，接受参数并赋值</li>
+</ul>
+</li>
+<li>先来分析一个简单的例子说明执行过程<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">li = []</span><br><span class="line">def func():</span><br><span class="line">    while True:</span><br><span class="line">        food = yield li</span><br><span class="line">        li.append(food)</span><br><span class="line">        </span><br><span class="line">f = func()  #带有yield关键字的函数执行结果返回一个生成器</span><br><span class="line">#f.__next__()  #使用send需进行初始化操作</span><br><span class="line">f.send(None) #初始化操作也可以这样来实现</span><br><span class="line">#f.__next__()是函数返回值，yield li，返回的是li，这里是空列表</span><br><span class="line">print(f.send(&quot;baozi&quot;))</span><br><span class="line">#send 相当于next操作，会将send传递的参数值进行赋值给food，food=&quot;baozi&quot;，接着向下执行，将food添加到列表中，继续循环，yield再次返回列表，此时列表为[&quot;baozi&quot;]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>来看一下执行结果<br><img src="https://i.loli.net/2019/06/28/5d158387bd67b75029.png" alt></p>
+<ul>
+<li>这里重点就是 food = yield li 这条语句的执行过程。可以这样理解，赋值运算符，先计算赋值运算符(=)的右边，再将值赋给左边，而使用了yield关键字，左边计算完成之后会返回函数执行结果。初始化的过程 f.<strong>next</strong>(),就是第一次执行到这里，左边直接返回li。第二次执行到这里，f.send(“baoiz”)，因为保留了上一次执行的状态，”baozi”会传递给yield，进而赋值给food，下一步操作，将food添加到列表，此时列表[‘baozi’]，下面开始进入下一次循环，同样先是执行yield li 返回li，此时返回的结果也就是[‘baozi’]。依次向下执行。<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3></li>
+<li>来看一下下面这段代码并分析结果<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def eater(name):</span><br><span class="line">    print(&apos;%s start to eat food&apos; %name)</span><br><span class="line">    food_list=[]</span><br><span class="line">    while True:</span><br><span class="line">        food=yield food_list</span><br><span class="line">        print(&apos;%s get %s ,to start eat&apos; %(name,food))</span><br><span class="line">        food_list.append(food)</span><br><span class="line"></span><br><span class="line">e=eater(&apos;钢蛋&apos;) </span><br><span class="line">print(next(e))     </span><br><span class="line">print(e.send(&apos;包子&apos;)) </span><br><span class="line">print(e.send(&apos;韭菜馅包子&apos;))</span><br><span class="line">print(e.send(&apos;大蒜包子&apos;))</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="https://i.loli.net/2019/06/28/5d158386e43a733015.png" alt></p>
+<ul>
+<li>print(next(e)) 执行结果<ul>
+<li>[] #yield food_list 返回空列表</li>
+</ul>
+</li>
+<li>print(e.send(‘包子’)) 执行结果<ul>
+<li>钢蛋 get 包子 ,to start eat<br>  [‘包子’]</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2019/06/28/python生成器详解/">python生成器详解</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 WenRou 的个人博客">WenRou</a></p>
+        <p><span>发布时间:</span>2019年06月28日 - 10时28分</p>
+        <p><span>最后更新:</span>2019年06月28日 - 11时03分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/06/28/python生成器详解/" title="python生成器详解">http://yoursite.com/2019/06/28/python生成器详解/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/06/28/python生成器详解/　　作者: WenRou" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a  href="/2019/06/24/sql-宽字节注入/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">sql-宽字节注入</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
 </article>
-  
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#生成器"><span class="toc-number">1.</span> <span class="toc-text">生成器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#协程函数"><span class="toc-number">2.</span> <span class="toc-text">协程函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#练习"><span class="toc-number">3.</span> <span class="toc-text">练习</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
     
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'xxxx',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
+</section>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/2019/06/24/sql-宽字节注入/" class="archive-article-date">
-      <time datetime="2019-06-24T15:14:24.000Z" itemprop="datePublished">06-24</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/2019/06/24/sql-宽字节注入/">sql-宽字节注入</a>
-    </h1>
-  
 
 
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/WEB/">WEB</a>
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2019/06/24/sql-宽字节注入/" title="下一篇: sql-宽字节注入">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/注入/">注入</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/06/28/python生成器详解/">python生成器详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/24/sql-宽字节注入/">sql-宽字节注入</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/24/Test-2/">Test 2</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/24/WenRou/">WenRou</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/06/24/hello-world/">Hello World</a></li></ul>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/2019/06/24/Test-2/" class="archive-article-date">
-      <time datetime="2019-06-24T12:07:50.000Z" itemprop="datePublished">06-24</time>
-</a>
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
 
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/2019/06/24/Test-2/">Test 2</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/knowledge/">knowledge</a>
-    </div>
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
 
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Test/">Test</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/2019/06/24/WenRou/" class="archive-article-date">
-      <time datetime="2019-06-24T11:53:58.000Z" itemprop="datePublished">06-24</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/2019/06/24/WenRou/">WenRou</a>
-    </h1>
-  
 
 
-        <div class="article-info info-on-archive">
-          
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/cognition/">cognition</a>
-    </div>
-
-
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Test/">Test</a></li></ul>
-    </div>
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/2019/06/24/hello-world/" class="archive-article-date">
-      <time datetime="2019-06-24T11:20:04.503Z" itemprop="datePublished">06-24</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/2019/06/24/hello-world/">Hello World</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
-          
-
-          
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-
+    <script>
+        
+    </script>
 
 </div>
       <footer id="footer">
@@ -552,18 +595,6 @@ ga('send', 'pageview');
         };
     })
 </script>
-
-    <button class="hide-labels">TAG 开关</button>
-    
-<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                $(".article-info").toggle(200);
-            });
-        });
-    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
